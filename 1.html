@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test1</title>
+    </head>
+    <body>
+        <!-- 循环 -->
+        <div id="app">
+            <ul>
+                <li v-for="book in books">{{ book.name }}</li>
+                <li v-for="(book, index) in books">{{index}} -- {{book.name}}</li>
+            </ul>
+            <input @keyup.13="submit">
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+        <script type="text/javascript">
+            new Vue({
+                el: "#app",
+                data:{
+                    books: [
+                        {name: 'test1'},
+                        {name: 'test2'},
+                        {name: 'test3'}
+                    ]
+                },
+                methods: {
+                    submit: function(){
+                        alert("单击回车");
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
